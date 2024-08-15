@@ -1,0 +1,47 @@
+2024-08-14 22:31:52,341 - INFO - Logging configuration initialized.
+2024-08-14 22:31:53,827 - INFO - Logging configuration is set up correctly.
+2024-08-14 22:31:53,828 - DEBUG - Entering download()
+2024-08-14 22:31:53,828 - DEBUG - Disabling multithreading because DEBUG logging enabled
+2024-08-14 22:31:53,829 - DEBUG -  Entering history()
+2024-08-14 22:31:53,836 - DEBUG - ('CREATE TABLE IF NOT EXISTS "_kv" ("key" VARCHAR(255) NOT NULL PRIMARY KEY, "value" VARCHAR(255)) WITHOUT ROWID', [])
+2024-08-14 22:31:53,836 - DEBUG - ('SELECT "t1"."key", "t1"."value" FROM "_kv" AS "t1" WHERE ("t1"."key" = ?) LIMIT ? OFFSET ?', ['BTC-USD', 1, 0])
+2024-08-14 22:31:53,838 - DEBUG -   Entering history()
+2024-08-14 22:31:53,839 - DEBUG - BTC-USD: Yahoo GET parameters: {'period1': '2020-01-01 00:00:00+00:00', 'period2': '2023-12-31 00:00:00+00:00', 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'}
+2024-08-14 22:31:53,839 - DEBUG -    Entering get()
+2024-08-14 22:31:53,839 - DEBUG - url=https://query2.finance.yahoo.com/v8/finance/chart/BTC-USD
+2024-08-14 22:31:53,839 - DEBUG - params=frozendict.frozendict({'period1': 1577836800, 'period2': 1703980800, 'interval': '1d', 'includePrePost': False, 'events': 'div,splits,capitalGains'})
+2024-08-14 22:31:53,840 - DEBUG -     Entering _get_cookie_and_crumb()
+2024-08-14 22:31:53,840 - DEBUG - cookie_mode = 'basic'
+2024-08-14 22:31:53,840 - DEBUG -      Entering _get_cookie_and_crumb_basic()
+2024-08-14 22:31:53,842 - DEBUG - ('CREATE TABLE IF NOT EXISTS "_cookieschema" ("strategy" VARCHAR(255) NOT NULL PRIMARY KEY, "fetch_date" DATETIME NOT NULL, "cookie_bytes" BLOB NOT NULL) WITHOUT ROWID', [])
+2024-08-14 22:31:53,843 - DEBUG - ('SELECT "t1"."strategy", "t1"."fetch_date", "t1"."cookie_bytes" FROM "_cookieschema" AS "t1" WHERE ("t1"."strategy" = ?) LIMIT ? OFFSET ?', ['basic', 1, 0])
+2024-08-14 22:31:53,844 - DEBUG - loaded persistent cookie
+2024-08-14 22:31:53,844 - DEBUG - reusing cookie
+2024-08-14 22:31:53,847 - DEBUG - Starting new HTTPS connection (1): query1.finance.yahoo.com:443
+2024-08-14 22:31:53,991 - DEBUG - https://query1.finance.yahoo.com:443 "GET /v1/test/getcrumb HTTP/11" 200 11
+2024-08-14 22:31:53,992 - DEBUG - crumb = 'Vsm9zIksyrN'
+2024-08-14 22:31:53,992 - DEBUG -      Exiting _get_cookie_and_crumb_basic()
+2024-08-14 22:31:53,992 - DEBUG -     Exiting _get_cookie_and_crumb()
+2024-08-14 22:31:53,993 - DEBUG - Starting new HTTPS connection (1): query2.finance.yahoo.com:443
+2024-08-14 22:31:54,125 - DEBUG - https://query2.finance.yahoo.com:443 "GET /v8/finance/chart/BTC-USD?period1=1577836800&period2=1703980800&interval=1d&includePrePost=False&events=div%2Csplits%2CcapitalGains&crumb=Vsm9zIksyrN HTTP/11" 200 None
+2024-08-14 22:31:54,189 - DEBUG - response code=200
+2024-08-14 22:31:54,190 - DEBUG -    Exiting get()
+2024-08-14 22:31:54,195 - DEBUG - BTC-USD: yfinance received OHLC data: 2020-01-01 00:00:00 -> 2023-12-30 00:00:00
+2024-08-14 22:31:54,196 - DEBUG - BTC-USD: OHLC after cleaning: 2020-01-01 00:00:00+00:00 -> 2023-12-30 00:00:00+00:00
+2024-08-14 22:31:54,200 - DEBUG - BTC-USD: OHLC after combining events: 2020-01-01 00:00:00+00:00 -> 2023-12-30 00:00:00+00:00
+2024-08-14 22:31:54,203 - DEBUG - BTC-USD: yfinance returning OHLC: 2020-01-01 00:00:00+00:00 -> 2023-12-30 00:00:00+00:00
+2024-08-14 22:31:54,204 - DEBUG -   Exiting history()
+2024-08-14 22:31:54,204 - DEBUG -  Exiting history()
+2024-08-14 22:31:54,205 - DEBUG - Exiting download()
+2024-08-14 22:31:54,356 - INFO - Initializing Agent with strategy: dqn
+2024-08-14 22:31:54,357 - INFO - Initializing Dueling DQN Agent...
+2024-08-14 22:31:54,357 - INFO - Initializing Dueling DQN Agent.
+2024-08-14 22:31:54,424 - WARNING - From C:\Python312\Lib\site-packages\keras\src\backend\tensorflow\core.py:205: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+2024-08-14 22:31:54,487 - INFO - Initializing Trading Environment.
+2024-08-14 22:32:00,900 - DEBUG - Popen(['git', 'version'], cwd=C:\Users\aaron\OneDrive\Documents\GitHub\ML-App, stdin=None, shell=False, universal_newlines=False)
+2024-08-14 22:32:00,940 - DEBUG - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=C:\Users\aaron\OneDrive\Documents\GitHub\ML-App, stdin=None, shell=False, universal_newlines=False)
+2024-08-14 22:32:00,979 - DEBUG - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=C:\Users\aaron\OneDrive\Documents\GitHub\ML-App, stdin=None, shell=False, universal_newlines=False)
+2024-08-14 22:32:01,017 - DEBUG - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=C:\Users\aaron\OneDrive\Documents\GitHub\ML-App, stdin=None, shell=False, universal_newlines=False)
+2024-08-14 22:32:01,066 - DEBUG - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=C:\Users\aaron\OneDrive\Documents\GitHub\ML-App, stdin=None, shell=False, universal_newlines=False)
+2024-08-14 22:32:01,158 - DEBUG - Popen(['git', 'rev-list', 'origin/main..main', '--'], cwd=C:\Users\aaron\OneDrive\Documents\GitHub\ML-App, stdin=None, shell=False, universal_newlines=False)
